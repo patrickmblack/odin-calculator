@@ -72,43 +72,42 @@ function updateDisplay(str){
     displayValue.textContent = str
 }
 
-function addOperation(op){
-
-    if(previousNumber == null){
-        previousNumber = displayValue.textContent
-        displayValue.textContent = ''
-    }
-
-}
-
-
 function operate(string){
 
     string = string.trim()
-    let [firstDigit, operator, secondDigit] = string.split(" ")
+    let calculationArray = string.split(" ")
+    let result = 0
 
-    switch(operator){
-        case "+":
-            updateDisplay(add(firstDigit, secondDigit))
-            break;
-        case "-":
-            updateDisplay(subtract(firstDigit,secondDigit))
-            break;
-        case "*":
-            updateDisplay(multiply(firstDigit, secondDigit))
-            break;
-        case "/":
-            updateDisplay(divide(firstDigit, secondDigit))
-            break;
+    while(calculationArray.length >= 3){
+        firstDigit = calculationArray.shift()
+        operator = calculationArray.shift()
+        secondDigit = calculationArray.shift()
+
+        switch(operator){
+            case "+":
+                result = add(firstDigit, secondDigit)
+                break;
+            case "-":
+                result = subtract(firstDigit,secondDigit)
+                break;
+            case "*":
+                result = multiply(firstDigit, secondDigit)
+                break;
+            case "/":
+                result = divide(firstDigit, secondDigit)
+                break;
+        }
+        calculationArray.unshift(result)
     }
+
+    displayValue.textContent = result
+    
 
 
 }
 
 function clearMemory(){
     displayValue.textContent = " "
-    previousNumber = Nan
-    currentNumber = Nan
 
 }
 
