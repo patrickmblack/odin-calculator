@@ -64,11 +64,21 @@ function backspaceDisplay(){
 }
 
 function addToDisplay(str){
+
     displayValue.textContent += str
 }
 
 function updateDisplay(str){
     displayValue.textContent = str
+}
+
+function addOperation(op){
+
+    if(previousNumber == null){
+        previousNumber = displayValue.textContent
+        displayValue.textContent = ''
+    }
+
 }
 
 
@@ -97,8 +107,8 @@ function operate(string){
 
 function clearMemory(){
     displayValue.textContent = " "
-    previousNumber = null
-    currentNumber = null
+    previousNumber = Nan
+    currentNumber = Nan
 
 }
 
