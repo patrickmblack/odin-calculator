@@ -2,6 +2,25 @@
 body{
     display: grid;
     margin-top: 100px;
+    background-color: rgb(128, 113, 134);
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(53, 44, 54);
+    color: rgb(221, 221, 221);
+    text-align: center;
+    font-size: large;
+    padding: 4px;
+    text-decoration: none;
+}
+
+a{
+    color: blanchedalmond;
+    text-decoration: none;
 }
 
 .screen{
@@ -12,7 +31,7 @@ body{
     border-radius: 8px;
     margin: 8px 0px;
     font-family: monospace;
-    font-size: 20px
+    font-size: 20px;
 }
 
 #calculator {
@@ -24,6 +43,7 @@ body{
     grid-gap: 5px;
     border-radius: 18px;
     /* grid-template-columns: repeat(2, 1fr); */
+    filter: drop-shadow(5px 5px 15px);
 }
 
 
