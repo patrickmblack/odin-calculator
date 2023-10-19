@@ -64,8 +64,9 @@ function backspaceDisplay(){
 }
 
 function addToDisplay(str){
-
-    displayValue.textContent += str
+    if(displayValue.textContent.length <= 22){
+        displayValue.textContent += str
+    }
 }
 
 function updateDisplay(str){
